@@ -43,7 +43,7 @@ class UndergroundSystem {
 		this.customerMap = {};
     }
     
-    void checkIn(int id, string stationName, int t) {
+    checkIn(id, stationName, t) {
     	// record start time
         this.customerMap[id] = {
         	checkIn: t,
@@ -56,7 +56,7 @@ class UndergroundSystem {
         }
     }
     
-    void checkOut(int id, string stationName, int t) {
+    checkOut(id, stationName, t) {
     	// grab values relevant to the previous trip
         let checkInTime = this.customerMap[id].checkIn;
         let startStation = this.customerMap[id].startStation;
@@ -68,7 +68,7 @@ class UndergroundSystem {
         this.stationMap[stationName].startStation.totalTime += timeOnTrain;
     }
     
-    double getAverageTime(string startStation, string endStation) {
+    getAverageTime(startStation, endStation) {
         let firstAvg = this.stationMap.endStation.startStation.totalTime / this.stationMap[endStation][startStation]totalTrips;
         let secondAvg = this.stationMap.startStation.endStation.totalTime / this.stationMap[startStation][endStation]totalTrips;
 

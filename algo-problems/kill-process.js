@@ -17,7 +17,7 @@ const rec = (current, killArr, pid, ppid) => {
           childIdxArr.push(i);
         }
       })
-      for (let i = 0; i < parentIdxArr; i++) {
+      for (let i = 0; i < childIdxArr; i++) {
       	rec(pid[childIdxArr[i]], killArr, pid, ppid);
       }
   }
